@@ -11,6 +11,7 @@ import com.mustafa.mvvmandnavigationincompose.components.ContentDetails
 import com.mustafa.mvvmandnavigationincompose.components.ContentList
 import com.mustafa.mvvmandnavigationincompose.components.MenuList
 import com.mustafa.mvvmandnavigationincompose.components.OrderList
+import com.mustafa.mvvmandnavigationincompose.components.OrderSuccessScreen
 import com.mustafa.mvvmandnavigationincompose.viewModel.contentViewModel.ContentRepository
 import com.mustafa.mvvmandnavigationincompose.viewModel.menuViewModel.MenuRepository
 import com.mustafa.mvvmandnavigationincompose.viewModel.orderViewModel.OrderRepository
@@ -72,8 +73,12 @@ fun Navigation(
             )
         }
 
-        composable(route = NavigationItem.OrderList.route){entry->
+        composable(route = NavigationItem.OrderList.route){
             OrderList(orderRepository = orderRepository, navController = navHostController)
+        }
+        
+        composable(route = NavigationItem.OrderSuccess.route){
+            OrderSuccessScreen(navController = navHostController , orderRepository = orderRepository)
         }
     }
 }

@@ -123,6 +123,7 @@ fun ContentDetails(
                 if (orderCount > 0){
                     navController.navigate(NavigationItem.MenuList.route)
                     orderRepository.addOrder(OrderModel(image = image , foodName = foodName , count = orderCount , totalPrice = price * orderCount))
+
                 }
             },
             modifier = Modifier
